@@ -12,7 +12,7 @@ namespace SignInUpProxy
     {
         [FunctionName("AppendRoleClaim")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req)
         {
             var appRole = "USER";
 
