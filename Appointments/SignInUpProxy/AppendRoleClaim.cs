@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace SignInUpProxy
@@ -24,7 +23,6 @@ namespace SignInUpProxy
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
 
                 string email = data.email;
-
 
                 if (email.EndsWith("@mentormate.com"))
                 {
