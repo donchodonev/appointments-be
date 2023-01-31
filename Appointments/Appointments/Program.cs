@@ -9,6 +9,14 @@ services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration, "AzureAd");
 
+services.AddAuthorizationCore(options =>
+{
+    options.AddPolicy("AdminOnly", policy =>
+    {
+        policy.RequireClaim("appRole", "ADMIN");
+    });
+});
+
 services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
