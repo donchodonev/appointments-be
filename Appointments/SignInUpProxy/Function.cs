@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace SignInUpProxy
 {
-    public static class AppendRoleClaim
+    public static class Function
     {
         [FunctionName("AppendRoleClaim")]
         public static async Task<IActionResult> Run(
