@@ -14,7 +14,7 @@ namespace SignInUpProxy
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req)
         {
-            var appRole = "USER";
+            var claimResponse = new ClaimResponse { AppRole = "USER"};
 
             using (var reader = new StreamReader(req.Body))
             {
@@ -26,11 +26,11 @@ namespace SignInUpProxy
 
                 if (email.EndsWith("@mentormate.com"))
                 {
-                    appRole = "ADMIN";
+                    claimResponse.AppRole = "ADMIN";
                 }
             }
 
-            return new OkObjectResult(new { appRole });
+            return new OkObjectResult(claimResponse);
         }
     }
 }
