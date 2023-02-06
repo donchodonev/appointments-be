@@ -4,7 +4,7 @@ namespace SignInUpProxy
 {
     public class ClaimResponse : ContinuationResponse
     {
-        [JsonPropertyName("appRole")]
-        public string AppRole { get; set; }
+        [JsonPropertyName("extension_appRole")]
+        public string Extension_AppRole { get; set; }
     }
 }
