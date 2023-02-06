@@ -6,9 +6,9 @@ namespace SignInUpProxy
     public class ContinuationResponse
     {
         [JsonPropertyName("version")]
-        protected string Version => Assembly.GetEntryAssembly().GetName().Version.ToString();
+        public string Version => Assembly.GetEntryAssembly().GetName().Version.ToString();
 
         [JsonPropertyName("action")]
-        protected string Action => "Continue";
+        public string Action => "Continue";
     }
 }
