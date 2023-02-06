@@ -13,7 +13,7 @@ services.AddAuthorizationCore(options =>
 {
     options.AddPolicy("AdminOnly", policy =>
     {
-        policy.RequireClaim("appRole", "ADMIN");
+        policy.RequireClaim("extension_AppRole", "ADMIN");
     });
 });
 
