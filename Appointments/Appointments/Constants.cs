@@ -4,6 +4,6 @@
     {
         public const string AdminOnlyPolicyName = "AdminOnly";
 
-        public const string ProviderOnlyPolicyName = "ProviderOnly";
+        public const string ProviderOrAdminPolicyName = "ProviderOrAdmin";
     }
 }

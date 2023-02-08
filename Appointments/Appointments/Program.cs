@@ -16,9 +16,9 @@ services.AddAuthorizationCore(options =>
         policy.RequireClaim("extension_AppRole", "ADMIN");
     });
 
-    options.AddPolicy("ProviderOnly", policy =>
+    options.AddPolicy("ProviderOrAdmin", policy =>
     {
-        policy.RequireClaim("extension_AppRole", "PROVIDER");
+        policy.RequireClaim("extension_AppRole", "PROVIDER", "ADMIN");
     });
 });
 
